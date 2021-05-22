@@ -18,12 +18,11 @@ def shuffle_card(how_many_cards, *players):
 		return
 	else:
 		for player in players:
-			playerCounter += 1
 			container = []
 			for shuffle in range(how_many_cards):
 				card = cardList.pop()
 				container.extend([card])
-			print("Karty gracza", playerCounter, ":", container)
+			print("Karty gracza", ":", container)
 
 
 print("""Rozpiska: 
