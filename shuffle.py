@@ -29,10 +29,13 @@ print("""Rozpiska:
 """)
 
 while True:
-	menu = input("Podaj co chcesz zrobić, jeśli chcesz przejść dalej kliknij enter, jeśli chcesz zakończyc wpisz 1.")
-	if menu == "1":
-		break
-	howManyCards = int(input("Podaj ile kart mam rozdać graczą: "))
-	howManyPlayers = int(input("Wpisz ile chcesz graczy: "))
-	for player in range(1, howManyPlayers + 1):
-		shuffle_card(howManyCards, player)
+	try:
+		menu = input("Podaj co chcesz zrobić, jeśli chcesz przejść dalej kliknij enter, jeśli chcesz zakończyc wpisz 1.")
+		if menu == "1":
+			break
+		howManyCards = int(input("Podaj ile kart mam rozdać graczą: "))
+		howManyPlayers = int(input("Wpisz ile chcesz graczy: "))
+		for player in range(1, howManyPlayers + 1):
+			shuffle_card(howManyCards, player)
+	except ValueError: print("Podałeś znaki zamiast cyfr lub nie podałes niczego!")
+	except: print("Wystąpił nieznany błąd!")
