@@ -11,7 +11,6 @@ cardList = ["9", "9", "9", "9",
             
             
 def shuffle_card(how_many_cards, *players):
-	playerCounter = 0
 	random.shuffle(cardList)
 	if how_many_cards * len(players) > len(cardList):
 		print("Mamy za mało kart!")
