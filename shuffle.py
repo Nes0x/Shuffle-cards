@@ -1,6 +1,7 @@
 import random
 
 
+counter = 0
 cardList = ["9", "9", "9", "9",
             "10", "10", "10", "10",
             "Jack", "Jack", "Jack", "Jack",
@@ -9,9 +10,9 @@ cardList = ["9", "9", "9", "9",
             "Ace", "Ace", "Ace", "Ace",
             "Joker", "Joker"]
             
-            
+random.shuffle(cardList)
 def shuffle_card(how_many_cards, *players):
-	random.shuffle(cardList)
+	global counter
 	if how_many_cards * len(players) > len(cardList):
 		print("Mamy za mało kart!")
 		return
@@ -20,13 +21,10 @@ def shuffle_card(how_many_cards, *players):
 			container = []
 			for shuffle in range(how_many_cards):
 				card = cardList.pop()
-				container.extend([card])
-			print("Karty gracza", ":", container)
+				container.append(card)
+			print("Karty gracza", counter, ":", container)
 
-
-print("""Rozpiska: 
-1. Aby zakończyć
-""")
+print("Rozpiska: \n1. Aby zakończyć")
 
 while True:
 	try:
@@ -36,6 +34,7 @@ while True:
 		howManyCards = int(input("Podaj ile kart mam rozdać graczą: "))
 		howManyPlayers = int(input("Wpisz ile chcesz graczy: "))
 		for player in range(1, howManyPlayers + 1):
+			counter += 1
 			shuffle_card(howManyCards, player)
 	except ValueError: print("Podałeś znaki zamiast cyfr lub nie podałes niczego!")
 	except: print("Wystąpił nieznany błąd!")
