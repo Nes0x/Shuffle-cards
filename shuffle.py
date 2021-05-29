@@ -17,6 +17,7 @@ def shuffle_card(how_many_cards, *players):
 		print("Mamy za mało kart!")
 		return
 	else:
+		counter += 1
 		for player in players:
 			container = []
 			for shuffle in range(how_many_cards):
@@ -34,7 +35,7 @@ while True:
 		howManyCards = int(input("Podaj ile kart mam rozdać graczą: "))
 		howManyPlayers = int(input("Wpisz ile chcesz graczy: "))
 		for player in range(1, howManyPlayers + 1):
-			counter += 1
 			shuffle_card(howManyCards, player)
+		counter = 0
 	except ValueError: print("Podałeś znaki zamiast cyfr lub nie podałes niczego!")
 	except: print("Wystąpił nieznany błąd!")
