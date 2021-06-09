@@ -15,7 +15,6 @@ def shuffle_card(how_many_cards, *players):
 	global counter
 	if how_many_cards * len(players) > len(cardList):
 		print("Mamy za mało kart!")
-		return
 	else:
 		counter += 1
 		for player in players:
