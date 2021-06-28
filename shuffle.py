@@ -44,5 +44,5 @@ while True:
 		random.shuffle(card_list)
 	except ValueError:
 		print("Podałeś znaki zamiast cyfr lub nie podałes niczego!")
-	#except:
-		#print("Wystąpił nieznany błąd!")
+	except:
+		print("Wystąpił nieznany błąd!")
