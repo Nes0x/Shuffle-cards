@@ -33,7 +33,7 @@ while True:
 		menu = input("Podaj co chcesz zrobić, jeśli chcesz przejść dalej kliknij enter, jeśli chcesz zakończyc wpisz 1.")
 		if menu == "1":
 			break
-		how_many_cards = int(input("Podaj ile kart mam rozdać graczą: "))
+		how_many_cards = int(input("Podaj ile kart mam rozdać graczom: "))
 		how_many_players = int(input("Wpisz ile chcesz graczy: "))
 		for player in range(1, how_many_players + 1):
 			shuffle_card(how_many_cards, player)
